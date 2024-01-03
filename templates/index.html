@@ -77,7 +77,7 @@
           <div class="header-align">
             <div class="header-navigation-area">
               <ul class="main-menu nav justify-content-center">
-                <li class=""><a href="index.html">Accueil</a></li>
+                <li class=""><a href="{% url "home" %}">Accueil</a></li>
                 <li><a href="#section-about">Le Parrain</a></li>
                 <li><a href="#section-mission">La Mission</a></li>
                 <li><a href="#section-objectifs">Les Objectifs</a></li>
@@ -112,7 +112,7 @@
                 <div class="col-md-6 col-lg-6 col-xl-7">
                   <div class="content" data-aos="fade-right" data-aos-duration="1000">
                     <div class="subtitle-content">
-                      <img src="{% static 'assets/img/icons/1.png' %}" alt="Givest-HasTech">
+                      {% comment %} <img src="{% static 'assets/img/icons/1.png' %}" alt="Givest-HasTech"> {% endcomment %}
                       <h6 style="font-size: 30px;">Imam Mouhamadou Sakhir Gaye</h6>
                     </div>
                     <div class="tittle-wrp">
@@ -122,8 +122,7 @@
                         <span>76 ans</span> Au service de l’humanité.</h2>
                     </div>
                     <div class="btn-wrp">
-                      <a href="causes.html" class="btn-theme btn-gradient btn-slide btn-style">All Causes <img class="icon icon-img" src="{% static 'assets/img/icons/arrow-line-right2.png' %}" alt="Icon"></a>
-                      <a href="#section-contact" class="btn-theme btn-border btn-black btn-style">Donate Now <img class="icon icon-img" src="{% static 'assets/img/icons/arrow-right-line-dark.png' %}" alt="Icon"></a>
+                      <a href="#section-contact" class="btn-theme btn-border btn-black btn-style">Contribution <img class="icon icon-img" src="{% static 'assets/img/icons/arrow-right-line-dark.png' %}" alt="Icon"></a>
                     </div>
                   </div>
                 </div>
@@ -131,26 +130,13 @@
                   <div class="layer-style">
                     <div class="thumb scene">
                       <span class="scene-layer" data-depth="0.20">                     
-                        <img class="" src="{% static 'assets/img/image/slide.png' %}" style="height: 780px; width: 720px;" alt="Image-Givest">
+                        <img class="" src="{% static 'assets/img/image/slide.png' %}" style="height: 680px; width: 620px;" alt="Image-Givest">
                       </span>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-            <div class="slider-shape">
-              <div class="shape-style1">
-                <img class="shape-img1" src="{% static 'assets/img/shape/map1.png' %}" alt="Image-Givest">
-              </div>
-              <div class="shape-style2">
-                <img class="shape-img2" src="{% static 'assets/img/shape/map2.png' %}" alt="Image-Givest">
-              </div>
-              <div class="shape-style3">
-                <img class="shape-img3" src="{% static 'assets/img/shape/banner-line1.png' %}" alt="Image-Givest">
-              </div>
-              <div class="shape-style4">
-                <img class="shape-img3" src="{% static 'assets/img/shape/banner-line2.png' %}" alt="Image-Givest">
-              </div>
             </div>
           </div>
         </div>
@@ -159,7 +145,7 @@
     </section>
     <!--== End Hero Area Wrapper ==-->
 
-
+<br><br><br><br>
     <!--== Start About Area ==-->
     <section class="about-area about-default-area" id="section-about">
       <div class="container">
@@ -176,11 +162,10 @@
             <div class="layer-style" data-aos="fade-up" data-aos-duration="1100">
               <div class="thumb">
                 <div class="row m-0">
-                  <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4 p-0 d-none d-sm-block d-lg-none d-xl-block tilt-animation">
-                    <img src="{% static 'assets/img/about/1.jpg' %}" alt="Image-Givest">
+                  <div class="col-sm-6 col-md-6 col-lg-6 col-xl-6 p-0 d-none d-sm-block d-lg-none d-xl-block tilt-animation">
                   </div>
-                  <div class="col-sm-4 col-md-8 col-lg-12 col-xl-8 p-0 tilt-animation">
-                    <img class="img-two" src="{% static 'assets/img/about/2.jpg' %}" alt="Image-Givest">
+                  <div class="col-sm-8 col-md-8 col-lg-12 col-xl-8 p-0 tilt-animation">
+                    <img class="img-two" src="{% static 'assets/img/Image6.png' %}" style="height:500px; width: 700px;" alt="Image-Givest">
                   </div>
                 </div>
               </div>
@@ -794,7 +779,7 @@
                       </form>
                       <div id="message-container"></div>
                     </div>
-                    
+
                     <div class="form-message"></div>
                     <div class="contact-map-area">
                       <div class="contact-info-content">

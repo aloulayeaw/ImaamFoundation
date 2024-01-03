@@ -1,7 +1,6 @@
 from django.shortcuts import render
 from django.core.mail import send_mail
 from django.http import JsonResponse
-import requests
 
 
 # Create your views here.
