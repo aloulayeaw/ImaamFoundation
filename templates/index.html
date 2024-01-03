@@ -751,7 +751,7 @@
                 <div class="col-lg-12">
                   <div class="contact-colunm">
                     <div class="contact-form">
-                      <form class="contact-form-wrapper" id="contact-form" action="http://whizthemes.com/mail-php/raju/arden/mail.php" method="post">
+                      <form class="contact-form-wrapper" id="contact-form" action="{% url "contact" %}" method="post">
                         <div class="row">
                           <div class="col-lg-12">
                             <div class="section-title">
@@ -792,8 +792,9 @@
                           </div>
                         </div>
                       </form>
+                      <div id="message-container"></div>
                     </div>
-                    <!-- Message Notification -->
+                    
                     <div class="form-message"></div>
                     <div class="contact-map-area">
                       <div class="contact-info-content">
@@ -836,6 +837,39 @@
           <!--== End Events Area ==-->
 
 
+          <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                const contactForm = document.getElementById('contact-form');
+                const messageContainer = document.getElementById('message-container');
+        
+                contactForm.addEventListener('submit', function(event) {
+                    event.preventDefault();
+                    const formData = new FormData(contactForm);
+        
+                    fetch(contactForm.action, {
+                        method: 'POST',
+                        body: formData,
+                        headers: {
+                            'X-Requested-With': 'XMLHttpRequest'
+                        },
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.success) {
+                            messageContainer.innerHTML = `<div class="alert alert-success">${data.message}</div>`;
+                            contactForm.reset();
+                        } else {
+                            messageContainer.innerHTML = `<div class="alert alert-danger">${data.message}</div>`;
+                        }
+                    })
+                    .catch(error => {
+                        console.error(error);
+                        messageContainer.innerHTML = `<div class="alert alert-danger">Une erreur s'est produite lors de l'envoi du formulaire.</div>`;
+                    });
+                });
+            });
+        </script>
+        
 
     <!--== Start Brand Logo Area ==-->
     <section class="brand-logo-area brand-logo-default-area">
